@@ -8,6 +8,7 @@ All you need is go 1.11+ with go mod setup (should be default)
 
 Setup the following environment variables:
 * `TOKEN`: Your own private token retrieved from the queue platfrom
+* `URL`: The url for the queue platform you are using (ex: "https://queue.students.cs.ubc.ca")
 * `COURSE`: The course you are querying (ex: "CPSC 213")
 * `DELAY`: The delay in minutes of which the program will query the queue
 * `THRESHOLD`: The threshold that the app will notify your slack channel once the queue length exceeds

@@ -17,6 +17,7 @@ var threshold int64
 var course string
 var webhook string
 var token string
+var queueUrl string
 
 type SlackMessage struct {
 	Text string `json:"text"`
@@ -71,6 +72,11 @@ func setupEnv() int64 {
 
 	}
 
+	queueUrl = os.Getenv("URL")
+	if queueUrl == "" {
+		log.Fatal("No queue URL provided, please add a url to your environment variables")
+	}
+
 	delay := os.Getenv("DELAY")
 	delayNum, err := strconv.ParseInt(delay, 10, 32)
 	if err != nil {
@@ -80,7 +86,7 @@ func setupEnv() int64 {
 }
 
 func checkQueue() {
-	req, err := http.NewRequest("GET", "https://queue.students.cs.ubc.ca/api/queues", nil)
+	req, err := http.NewRequest("GET", fmt.Sprintf("%s/api/queues", queueUrl), nil)
 	if err != nil {
 		log.Printf("error creating request: %v\n", err)
 		return
