@@ -10,7 +10,7 @@ Setup the following environment variables:
 * `TOKEN`: Your own private token retrieved from the queue platfrom
 * `COURSE`: The course you are querying (ex: "CPSC 213")
 * `DELAY`: The delay in minutes of which the program will query the queue
-* `THRESHOLD`: The threshold that the app will notify your slack channel once theq queue length exceeds
+* `THRESHOLD`: The threshold that the app will notify your slack channel once the queue length exceeds
 * `WEBHOOK`: A slack app [webhook](https://api.slack.com/messaging/webhooks) that points to a specific channel, this is where the app will be posting 
 
 Then simply run:
