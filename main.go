@@ -120,7 +120,7 @@ func checkQueue() {
 
 func alertSlack(queueLength int) {
 	sm := SlackMessage{
-		Text: fmt.Sprintf("The queue is now %d long please send help", queueLength),
+		Text: fmt.Sprintf("<!channel> The queue is now %d long please send help", queueLength),
 	}
 	body, err := json.Marshal(sm)
 	if err != nil {
